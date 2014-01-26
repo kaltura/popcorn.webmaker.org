@@ -46,7 +46,25 @@
           </div>
           <ul class="menu-container">
             <li><span class="icon icon-th-large"></span> <a href="{{audience}}/{{localeInfo.lang}}/me" target="_blank">{{ gettext("My makes") }}</a></li>
-            <li class="login"><span class="icon icon-signout"></span><iframe src="{{audience}}/{{localeInfo.lang}}/sso/include.html" class="include-frame"></iframe>
+            <li class="login"><span class="icon icon-signout"></span>
+               <!--  <iframe src="{{audience}}/{{localeInfo.lang}}/sso/include.html" class="include-frame"></iframe> -->
+               <!--  kWidget login target ( works without manual iframe injection )-->
+               
+            <div id="hostedAuthWidget" data-kalturaKWidgetPath="{{kalturaKWidgetPath}}"></div>
+            <script> // get our kwidgetAuth as well: 
+             if ( typeof kWidget.auth === "undefined" ) {
+                var rscript = document.createElement( "script" );
+                rscript.onload = function() {
+                    kWidget.auth.getWidget( "hostedAuthWidget", function( userObject ){
+                        $.each( userObject, function( key, value){
+                            console.log( key + " "+ value );
+                        })
+                    })
+                };
+                rscript.src = $('#hostedAuthWidget').attr('data-kalturaKWidgetPath') + 'kWidget/kWidget.auth.js';
+                document.head.appendChild( rscript );
+              }
+            </script>
             {% if togetherjsEnabled %}
               <li><span class="icon icon-comments-alt"></span><button class="together-toggle">{{ gettext("Collaborate") }}</button></li>
             {% endif %}
@@ -54,7 +72,7 @@
           </ul>
         </div>
 
-        <div class="back-to-webmaker"><span class="icon webmaker-icon"></span> <a href="{{audience}}/{{localeInfo.lang}}">Webmaker.org</a></div>
+        <div class="back-to-webmaker"><span class="icon webmaker-icon"></span> <a href="{{audience}}/{{localeInfo.lang}}">maker.kaltura.com</a></div>
 
       </nav>
     </div>

@@ -1,7 +1,9 @@
 var utils = require( "../../lib/utilities" ),
-    loginClient = require( "../../lib/loginapi" ),
     makeClient = require( "../../lib/makeapi" ),
     metrics = require( "../../lib/metrics" );
+
+loginClient = require( "../../public/external/kaltura-loginapi/kaltura-loginapi.js" );
+
 
 module.exports = function( Project ) {
   return function( req, res, next ) {

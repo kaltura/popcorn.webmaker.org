@@ -21,6 +21,11 @@
   <link rel="stylesheet" href="/templates/assets/plugins/wikipedia/popcorn.wikipedia.css">
   <link rel="stylesheet" href="/templates/assets/plugins/sketchfab/popcorn.sketchfab.css">
 
+  {% if whiteLabel %}
+  <link rel="stylesheet" href="/external/kaltura-whitelabel/css/whitelabel.css">
+  <script src="{{kalturaKWidgetPath}}mwEmbedLoader.php"></script>
+  {% endif %}
+
   <meta property="og:title" content="Popcorn Maker">
   <meta property="og:description" content="{{ gettext("ogDesc") }}">
   <meta property="og:type" content="website">

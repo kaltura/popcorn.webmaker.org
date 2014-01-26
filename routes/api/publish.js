@@ -24,7 +24,10 @@ module.exports = function( req, res ) {
         projectUrl: projectUrl,
         popcorn: utilities.generatePopcornString( projectData ),
         thumbnail: res.locals.project.thumbnail,
-        background: res.locals.project.background
+        background: res.locals.project.background,
+        // TODO generic config injection, for all whiteLable
+        whiteLabel: config.WHITELABEL,
+        kalturaKWidgetPath: config.KALTURA_KWIDGET_PATH
       }, function( err, html ) {
         var sanitized = sanitizer.compressHTMLEntities( html );
 

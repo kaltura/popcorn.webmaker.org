@@ -23,6 +23,8 @@ module.exports = function( grunt ) {
           "public/templates/basic/style.less",
           "public/templates/assets/css/jquery-ui/jquery.ui.butter.less",
           "public/css/controls.less"
+          // for kaltura white-label: 
+          "public/external/kaltura-whitelabel/css/whitelabel.less"
         ]
       }
     },

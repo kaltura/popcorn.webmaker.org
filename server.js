@@ -256,6 +256,7 @@ app.get( "/layouts/header.html", function( req, res ) {
   res.render( "/layouts/header.html", {
     user_bar: app.locals.config.user_bar,
     audience: app.locals.config.audience,
+    kalturaKWidgetPath: config.KALTURA_KWIDGET_PATH,
     togetherjsEnabled: config.TOGETHERJS_ENABLED
   });
 });

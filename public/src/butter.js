@@ -33,7 +33,7 @@ window.Butter = {
       "jquery-ui": "/static/bower/jquery-ui/ui/jquery-ui",
       "farbtastic": "/static/bower/farbtastic/farbtastic",
       "WebmakerUI": "/static/bower/webmaker-ui/ui",
-      "webmaker-ui-fragments": "/static/bower/webmaker-ui/webmaker-ui-fragments"
+      "webmaker-ui-fragments": "/static/bower/webmaker-ui/webmaker-ui-fragments",
     },
     shim: {
       "jquery-ui": [ "jquery" ],
